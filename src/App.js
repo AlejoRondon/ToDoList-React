@@ -7,9 +7,11 @@ export default function App(props) {
     <div className="App">
       <div className="container">
         <div className="row">
-          <div className="col-4">
-            <StickyNote />
-          </div>
+          {/* <div className="col-4"> */}
+          <StickyNote />
+          <StickyNote />
+          <StickyNote />
+          {/* </div> */}
         </div>
       </div>
     </div>
