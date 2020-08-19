@@ -8,9 +8,21 @@ export default function App(props) {
       <div className="container">
         <div className="row">
           {/* <div className="col-4"> */}
-          <StickyNote />
-          <StickyNote />
-          <StickyNote />
+          <StickyNote
+            email="blackphotografy@gmail.com"
+            cardTitle="Market"
+            cardDescription="Buy milk"
+          />
+          <StickyNote
+            email="blackphotografy@gmail.com"
+            cardTitle="Market"
+            cardDescription="Buy milk"
+          />
+          <StickyNote
+            email="blackphotografy@gmail.com"
+            cardTitle="Market"
+            cardDescription="Buy milk"
+          />
           {/* </div> */}
         </div>
       </div>
