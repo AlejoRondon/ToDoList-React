@@ -1,4 +1,5 @@
 import React from "react";
+import "./StickyNote.css";
 
 class StickyNote extends React.Component {
   render() {
