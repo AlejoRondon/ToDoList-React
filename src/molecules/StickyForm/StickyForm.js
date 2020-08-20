@@ -2,6 +2,12 @@ import React from "react";
 import "./StickyForm.css";
 
 export default class StickyForm extends React.Component {
+  state = {
+    email: "",
+    title: "",
+    description: ""
+  };
+
   handleChange = (e) => {
     console.log({
       name: e.target.name,
@@ -24,6 +30,7 @@ export default class StickyForm extends React.Component {
       name: e.target.name,
       value: e.target.value
     });
+    console.log(this.state);
   };
   render() {
     return (
@@ -39,6 +46,7 @@ export default class StickyForm extends React.Component {
                   className="form-control"
                   type="email"
                   name="email"
+                  value={this.state.email}
                 />
               </div>
 
@@ -49,6 +57,7 @@ export default class StickyForm extends React.Component {
                   className="form-control"
                   type="text"
                   name="title"
+                  value={this.state.title}
                 />
               </div>
 
@@ -59,6 +68,7 @@ export default class StickyForm extends React.Component {
                   className="form-control"
                   type="text"
                   name="description"
+                  value={this.state.description}
                 />
               </div>
 
