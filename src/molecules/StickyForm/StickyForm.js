@@ -4,22 +4,18 @@ import "./StickyForm.css";
 export default class StickyForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      email: "",
-      title: "",
-      description: ""
-    };
+    // this.state = {};
     console.log("1.Mounting phase: Constructor");
   }
 
-  handleChange = (e) => {
-    console.log({
-      name: e.target.name,
-      value: e.target.value
-    });
+  // handleChange = (e) => {
+  //   console.log({
+  //     name: e.target.name,
+  //     value: e.target.value
+  //   });
 
-    this.setState({ [e.target.name]: e.target.value });
-  };
+  //   this.setState({ [e.target.name]: e.target.value });
+  // };
   handleClick = (e) => {
     console.log("Button was clicked");
     console.log({
@@ -47,33 +43,33 @@ export default class StickyForm extends React.Component {
               <div className="form-group">
                 <label>Email</label>
                 <input
-                  onChange={this.handleChange}
+                  onChange={this.props.onChange}
                   className="form-control"
                   type="email"
                   name="email"
-                  value={this.state.email}
+                  value={this.props.formValues.email}
                 />
               </div>
 
               <div className="form-group">
                 <label>Title</label>
                 <input
-                  onChange={this.handleChange}
+                  onChange={this.props.onChange}
                   className="form-control"
                   type="text"
                   name="title"
-                  value={this.state.title}
+                  value={this.props.formValues.title}
                 />
               </div>
 
               <div className="form-group">
                 <label>Description</label>
                 <input
-                  onChange={this.handleChange}
+                  onChange={this.props.onChange}
                   className="form-control"
                   type="text"
                   name="description"
-                  value={this.state.description}
+                  value={this.props.formValues.description}
                 />
               </div>
 
