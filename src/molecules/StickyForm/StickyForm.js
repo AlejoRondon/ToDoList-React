@@ -7,6 +7,8 @@ export default class StickyForm extends React.Component {
       name: e.target.name,
       value: e.target.value
     });
+
+    this.setState({ [e.target.name]: e.target.value });
   };
   handleClick = (e) => {
     console.log("Button was clicked");
@@ -46,7 +48,7 @@ export default class StickyForm extends React.Component {
                   onChange={this.handleChange}
                   className="form-control"
                   type="text"
-                  name="jobTitle"
+                  name="title"
                 />
               </div>
 
@@ -56,7 +58,7 @@ export default class StickyForm extends React.Component {
                   onChange={this.handleChange}
                   className="form-control"
                   type="text"
-                  name="twitter"
+                  name="description"
                 />
               </div>
 
