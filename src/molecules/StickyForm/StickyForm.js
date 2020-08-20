@@ -2,11 +2,15 @@ import React from "react";
 import "./StickyForm.css";
 
 export default class StickyForm extends React.Component {
-  state = {
-    email: "",
-    title: "",
-    description: ""
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      title: "",
+      description: ""
+    };
+    console.log("1.Mounting phase: Constructor");
+  }
 
   handleChange = (e) => {
     console.log({
@@ -33,6 +37,7 @@ export default class StickyForm extends React.Component {
     console.log(this.state);
   };
   render() {
+    console.log("1.Mounting phase/2.Updating phase: Render");
     return (
       <div>
         <div className="card text-center w-100">
@@ -86,5 +91,14 @@ export default class StickyForm extends React.Component {
         </div>
       </div>
     );
+  }
+  componentDidMount() {
+    console.log("1.Mounting phase: componentDidMount");
+  }
+  componentDidUpdate(oldProps, oldState) {
+    console.log("2.Mounting phase: componentDidUpdate");
+  }
+  componentWillUnmount() {
+    console.log("3.Mounting phase: componentWillUnmount");
   }
 }
