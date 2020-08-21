@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../atoms/Navbar/Navbar";
 import StickyNote from "../../molecules/StickyNote/StickyNote";
+import StickyForm from "../../molecules/StickyList/StickyList";
 export default class StickyNotes extends React.Component {
   state = {
     stickyDB: [
@@ -29,15 +30,7 @@ export default class StickyNotes extends React.Component {
       <React.Fragment>
         <Navbar />
         <div className="container">
-          <ul className="list-unstyled list-inline">
-            {this.state.stickyDB.map((stickyNoteInfo) => {
-              return (
-                <li className="list-inline-item" key={stickyNoteInfo.id}>
-                  <StickyNote email={stickyNoteInfo.email} />
-                </li>
-              );
-            })}
-          </ul>
+          <StickyForm stickyDB={this.state.stickyDB} />
         </div>
       </React.Fragment>
     );
