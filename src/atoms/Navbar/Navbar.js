@@ -1,12 +1,15 @@
 import React from "react";
 import logo from "../../assets/images/logo.png";
 import "./Navbar.css";
+
+import { Link } from "react-router-dom";
+
 export default class Navbar extends React.Component {
   render() {
     return (
       <div>
         <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-          <a class="navbar-brand" href="#">
+          <Link class="navbar-brand" to="/stickynotes">
             <img
               src={logo}
               width="30"
@@ -17,7 +20,7 @@ export default class Navbar extends React.Component {
             />
             <span className="font-weight-light">Sticky</span>
             <span>Notes</span>
-          </a>
+          </Link>
           <button
             class="navbar-toggler"
             type="button"
@@ -31,12 +34,12 @@ export default class Navbar extends React.Component {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class="nav-link " href="#">
+              <Link class="nav-link active" to="/stickynotes">
                 Home <span class="sr-only">(current)</span>
-              </a>
-              <a class="nav-link active" href="#">
+              </Link>
+              <Link class="nav-link " to="/stickynotes/new">
                 new
-              </a>
+              </Link>
             </div>
           </div>
         </nav>
