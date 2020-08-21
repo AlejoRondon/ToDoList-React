@@ -11,7 +11,7 @@ class StickyNote extends React.Component {
       <div className="card text-center">
         <div className="card-header">{this.props.email}</div>
         <img
-          src={`https://www.gravatar.com/avatar/${hash}?s=250?d=identicon`}
+          src={`https://www.gravatar.com/avatar/${hash}?s=250?&d=identicon&r=PG`}
           alt="avatar"
         />
         <div className="card-body">
