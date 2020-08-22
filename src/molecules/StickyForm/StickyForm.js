@@ -23,15 +23,15 @@ export default class StickyForm extends React.Component {
       value: e.target.value
     });
   };
-  handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Submiting form");
-    console.log({
-      name: e.target.name,
-      value: e.target.value
-    });
-    console.log(this.state);
-  };
+  // handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   console.log("Submiting form");
+  //   console.log({
+  //     name: e.target.name,
+  //     value: e.target.value
+  //   });
+  //   console.log(this.state);
+  // };
   render() {
     console.log("1.Mounting phase/2.Updating phase: Render");
     return (
@@ -39,7 +39,11 @@ export default class StickyForm extends React.Component {
         <div className="card text-center w-100">
           <div className="card-header">New StickyNote</div>
           <div className="card-body">
-            <form onSubmit={this.handleSubmit} action="#" name="newStickyForm">
+            <form
+              onSubmit={this.props.onSubmit}
+              action="#"
+              name="newStickyForm"
+            >
               <div className="form-group">
                 <label>Email</label>
                 <input
