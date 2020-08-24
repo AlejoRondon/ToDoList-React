@@ -2,7 +2,7 @@ import React from "react";
 import StickyNew from "./pages/StickyNew/StickyNew";
 import StickyHome from "./pages/StickyHome/StickyHome";
 import StickyEdit from "./pages/StickyEdit/StickyEdit";
-import StickyDetails from "./pages/StickyEdit/StickyDetails";
+import StickyDetailsContainer from "./pages/StickyDetails/StickyDetailsContainer";
 import NotFound from "./pages/404NotFound/404NotFound";
 
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
@@ -23,7 +23,7 @@ export default function App(props) {
         <Route
           exact
           path="/stickynotes/details/:stickyId"
-          component={StickyDetails}
+          component={StickyDetailsContainer}
         />
         {/* not found - advanved version */}
         <Route exact path="/NotFound" component={NotFound} />

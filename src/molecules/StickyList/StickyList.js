@@ -9,16 +9,17 @@ export default class ReactList extends React.Component {
           {this.props.stickyDB.map((stickyNoteInfo) => {
             return (
               <li className="list-inline-item">
-                <Link
+                {/* <Link
                   className="text-reset text-decoration-none"
                   to={`/stickynotes/edit/${stickyNoteInfo.id}`}
-                >
-                  <StickyNote
-                    email={stickyNoteInfo.email}
-                    cardTitle={stickyNoteInfo.title}
-                    cardDescription={stickyNoteInfo.description}
-                  />
-                </Link>
+                > */}
+                <StickyNote
+                  email={stickyNoteInfo.email}
+                  cardTitle={stickyNoteInfo.title}
+                  cardDescription={stickyNoteInfo.description}
+                  stickyId={stickyNoteInfo.id}
+                />
+                {/* </Link> */}
               </li>
             );
           })}

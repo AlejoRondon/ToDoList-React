@@ -18,8 +18,15 @@ class StickyNote extends React.Component {
           <hr />
           <p className="card-text">{this.props.cardDescription}</p>
           {!this.props.onCreation && (
-            <Link to="#" className="btn btn-primary">
-              Do something
+            <Link
+              to={
+                this.props.stickyId
+                  ? `/stickynotes/details/${this.props.stickyId}`
+                  : "#"
+              }
+              className="btn btn-primary"
+            >
+              details
             </Link>
           )}
           {/* {!this.props.onCreation ? (
