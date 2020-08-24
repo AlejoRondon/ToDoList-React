@@ -8,13 +8,13 @@ export default class Navbar extends React.Component {
   render() {
     return (
       <div>
-        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-          <Link class="navbar-brand" to="/stickynotes">
+        <nav className="navbar navbar-expand-md navbar-dark bg-primary">
+          <Link className="navbar-brand" to="/stickynotes">
             <img
               src={logo}
               width="30"
               height="30"
-              class="d-inline-block align-top"
+              className="d-inline-block align-top"
               alt=""
               loading="lazy"
             />
@@ -22,7 +22,7 @@ export default class Navbar extends React.Component {
             <span>Notes</span>
           </Link>
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNavAltMarkup"
@@ -30,14 +30,14 @@ export default class Navbar extends React.Component {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-              <Link class="nav-link active" to="/stickynotes">
-                Home <span class="sr-only">(current)</span>
+          <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div className="navbar-nav">
+              <Link className="nav-link active" to="/stickynotes">
+                Home <span className="sr-only">(current)</span>
               </Link>
-              <Link class="nav-link " to="/stickynotes/new">
+              <Link className="nav-link " to="/stickynotes/new">
                 new
               </Link>
             </div>

@@ -4,16 +4,33 @@ import Navbar from "../../atoms/Navbar/Navbar";
 import StickyForm from "../../molecules/StickyForm/StickyForm";
 import * as data from "../../stickyDB.json";
 
-export default class StickyNew extends React.Component {
+export default class StickyEdit extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       form: {
+        id: "",
         email: "",
         title: "",
         description: ""
       }
     };
+    this.indexOfFiltered = undefined;
+  }
+  componentDidMount() {
+    console.log(data.data);
+    let filteredStickyNote = data.data.filter((element, index) => {
+      if (element.id === Number(this.props.match.params.stickyId)) {
+        this.indexOfFiltered = index;
+        return true;
+      } else {
+        return false;
+      }
+    });
+    if (filteredStickyNote[0]) {
+      this.setState({ form: filteredStickyNote[0] });
+    }
+    console.log(filteredStickyNote);
   }
   handleChange = (e) => {
     this.setState({
@@ -31,10 +48,11 @@ export default class StickyNew extends React.Component {
     //     [e.target.name]: e.target.value
     //   }
     // });
-    console.log(data.data);
-    data.data.push(this.state.form);
-    console.log(data.data);
-    this.setState({ stickyDB: data.data });
+    //console.log(data.data);
+    //data.data.push(this.state.form);
+    //console.log(data.data);
+    data.data[this.indexOfFiltered] = this.state.form;
+    //this.setState({ stickyDB: data.data });
     console.log("Save data here");
     this.props.history.push("/stickynotes");
   };
@@ -43,6 +61,9 @@ export default class StickyNew extends React.Component {
       <React.Fragment>
         <Navbar />
         <div className="container">
+          <div className="row">
+            <div className="col-12 h1 text-center">Editing SkickyNote</div>
+          </div>
           <div className="row">
             <div className="col-6">
               <StickyNote
