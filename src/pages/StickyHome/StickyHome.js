@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../../atoms/Navbar/Navbar";
-import StickyNote from "../../molecules/StickyNote/StickyNote";
+// import Navbar from "../../atoms/Navbar/Navbar";
+// import StickyNote from "../../molecules/StickyNote/StickyNote";
 import StickyForm from "../../molecules/StickyList/StickyList";
 import * as data from "../../stickyDB.json";
 export default class StickyNotes extends React.Component {
@@ -13,7 +13,7 @@ export default class StickyNotes extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="container">
           <StickyForm stickyDB={this.state.stickyDB} />
         </div>

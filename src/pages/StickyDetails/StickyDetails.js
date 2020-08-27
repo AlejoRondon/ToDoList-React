@@ -1,10 +1,12 @@
 import React from "react";
 import StickyNote from "../../molecules/StickyNote/StickyNote";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
+// import Modal from "../../molecules/Modal/Modal";
+import DeleteModal from "../../molecules/DeleteModal/DeleteModal";
+
 import { Link } from "react-router-dom";
 
 export default function StickyDetails(props) {
-  const modalElement = document.getElementById("modal");
   return (
     <div className="container">
       <div className="row">
@@ -28,10 +30,16 @@ export default function StickyDetails(props) {
             </Link>
           </div>
           <div>
-            <button onClick={this.openModal} className="btn btn-danger">
+            <button onClick={props.onOpenModal} className="btn btn-danger">
               Delete
             </button>
-            {ReactDOM.createPortal(<h1>holas</h1>, modalElement)}
+            <DeleteModal
+              onClose={props.onCloseModal}
+              isOpen={props.modalIsOpen}
+              onDeleteStickyNote={props.onDeleteStickyNote}
+            />
+            {/* I'm the children{" "} */}
+            {/* </DeleteModal> */}
           </div>
         </div>
       </div>

@@ -41,7 +41,7 @@ export default class StickyNew extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className="container">
           <div className="row">
             <div className="col-6">
